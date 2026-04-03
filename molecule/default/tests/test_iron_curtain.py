@@ -138,9 +138,11 @@ class TestAssessment:
             "ARIA: ASSESSMENT.md not found in workspace/."
         )
         content = _read_file("ASSESSMENT.md")
-        # Check that Lynis baseline scores have been filled in
-        # Look for node names with numbers (scores)
-        score_pattern = r"sdc-iron-\w+[\s|]*\d+"
+        # Look for filled Lynis score cells in the baseline table
+        # The template has empty cells: "| sdc-iron-web-1 | | | |"
+        # A filled entry looks like: "| sdc-iron-web-1 | 52 | | |"
+        # Match: node name, pipe, then a number (the baseline score)
+        score_pattern = r"sdc-iron-\w+\s*\|\s*\d{2}"
         has_scores = bool(re.search(score_pattern, content))
         assert has_scores, (
             "ARIA: ASSESSMENT.md has no Lynis scores recorded. "
