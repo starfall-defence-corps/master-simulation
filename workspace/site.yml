@@ -1,0 +1,11 @@
+# ---
+# # Master Simulation — Operation: Iron Curtain
+# # Uncomment and complete this play after building your role.
+# - name: Operation Iron Curtain — CIS Compliance
+# #   hosts: all
+# #   become: true
+# #   serial: 2
+# #   vars_files:
+# #     - vault.yml
+# #   roles:
+# #     - iron_curtain

@@ -1,0 +1,53 @@
+dependency:
+  name: galaxy
+
+driver:
+  name: default
+
+platforms:
+  - name: sdc-iron-web-1
+    managed: false
+    groups:
+      - fleet
+      - debian
+      - web_servers
+  - name: sdc-iron-web-2
+    managed: false
+    groups:
+      - fleet
+      - debian
+      - web_servers
+  - name: sdc-iron-db-1
+    managed: false
+    groups:
+      - fleet
+      - redhat
+      - db_servers
+  - name: sdc-iron-db-2
+    managed: false
+    groups:
+      - fleet
+      - redhat
+      - db_servers
+  - name: sdc-iron-app
+    managed: false
+    groups:
+      - fleet
+      - debian
+      - app_servers
+  - name: sdc-iron-comms
+    managed: false
+    groups:
+      - fleet
+      - debian
+      - comms_relays
+
+provisioner:
+  name: ansible
+  inventory:
+    links:
+      hosts: inventory/hosts.yml
+
+verifier:
+  name: testinfra
+  directory: tests/

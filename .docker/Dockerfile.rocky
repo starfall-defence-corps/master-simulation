@@ -1,0 +1,74 @@
+FROM rockylinux:9
+
+ENV container=docker
+
+RUN dnf -y install \
+    systemd \
+    openssh-server \
+    python3 \
+    python3-libselinux \
+    sudo \
+    iproute \
+    procps-ng \
+    firewalld \
+    cronie \
+    at \
+    && dnf clean all
+
+# Mask unnecessary systemd units
+RUN systemctl mask \
+    dev-hugepages.mount \
+    sys-fs-fuse-connections.mount \
+    systemd-udev-trigger.service \
+    systemd-udevd.service \
+    systemd-update-utmp.service \
+    systemd-logind.service \
+    getty@.service \
+    getty.target
+
+RUN systemctl enable sshd
+RUN systemctl enable firewalld
+RUN systemctl enable crond
+RUN ssh-keygen -A
+
+# SSH misconfigurations (CIS 5.2.x)
+RUN mkdir -p /run/sshd \
+    && sed -i 's/#PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config \
+    && sed -i 's/#PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config \
+    && sed -i 's/#PubkeyAuthentication.*/PubkeyAuthentication yes/' /etc/ssh/sshd_config \
+    && sed -i 's/#MaxAuthTries.*/MaxAuthTries 6/' /etc/ssh/sshd_config \
+    && sed -i 's/#LoginGraceTime.*/LoginGraceTime 120/' /etc/ssh/sshd_config \
+    && sed -i 's/#ClientAliveInterval.*/ClientAliveInterval 0/' /etc/ssh/sshd_config
+
+# Core dumps not restricted (CIS 1.5.x)
+RUN echo '* soft core unlimited' > /etc/security/limits.d/core.conf
+
+# Sysctl not hardened (CIS 3.x)
+RUN mkdir -p /etc/sysctl.d \
+    && echo 'net.ipv4.ip_forward = 1' > /etc/sysctl.d/99-insecure.conf \
+    && echo 'net.ipv4.conf.all.accept_redirects = 1' >> /etc/sysctl.d/99-insecure.conf
+
+# No login banner
+RUN rm -f /etc/motd && rm -f /etc/issue.net
+
+# Cron — no restrictions
+RUN rm -f /etc/cron.allow && rm -f /etc/at.allow
+
+# General Snowflake's planted credentials
+RUN echo 'db_user=fleet_admin' > /opt/fleet-db-creds.txt \
+    && echo 'db_pass=starfall_2187' >> /opt/fleet-db-creds.txt
+
+RUN useradd -m -s /bin/bash cadet \
+    && echo 'cadet:academy' | chpasswd \
+    && echo 'cadet ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers.d/cadet \
+    && chmod 0440 /etc/sudoers.d/cadet
+
+RUN mkdir -p /home/cadet/.ssh \
+    && chmod 700 /home/cadet/.ssh \
+    && chown cadet:cadet /home/cadet/.ssh
+
+RUN echo 'root:starfall' | chpasswd
+
+EXPOSE 22
+STOPSIGNAL SIGRTMIN+3
+CMD ["/sbin/init"]
