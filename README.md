@@ -2,6 +2,8 @@
 
 > 🧭 [← 2.4 Defence in Depth](https://github.com/starfall-defence-corps/mission-2-4-defence-in-depth) · **You are here: Master Simulation** · 🎓 Course complete — [what's next](https://github.com/starfall-defence-corps/sdc-academy) · [🏠 Academy Hub](https://github.com/starfall-defence-corps/sdc-academy)
 
+> ☁️ **No Docker on your machine?** Create your own copy first (Use this template), then on **your** repo: **Code → Codespaces → Create codespace** — everything is preinstalled. First boot takes ~5 min (one-time); after that it starts fast.
+
 ## Master Simulation: Operation Iron Curtain
 
 > *"General Snowflake. 6 servers, every one different. Hand-built. Undocumented. Your mission: uniform, tested, automated compliance."*
