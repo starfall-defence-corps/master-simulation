@@ -1,4 +1,4 @@
-.PHONY: doctor help setup test incident reset destroy ssh-web-1 ssh-web-2 ssh-db-1 ssh-db-2 ssh-app ssh-comms
+.PHONY: doctor submit help setup test incident reset destroy ssh-web-1 ssh-web-2 ssh-db-1 ssh-db-2 ssh-app ssh-comms
 
 help: ## Show available commands
 	@echo ""
@@ -20,6 +20,9 @@ test: ## Run ARIA assessment verification
 
 incident: ## Trigger the surprise incident (Mission 4)
 	@bash scripts/trigger-incident.sh
+
+submit: ## Submit your work for ARIA review (branch, commit, push, PR)
+	@bash $(ROOT_DIR)/scripts/submit.sh
 
 reset: ## Destroy and rebuild all nodes
 	@bash scripts/reset-lab.sh
