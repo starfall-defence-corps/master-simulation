@@ -1,5 +1,7 @@
 # Starfall Defence Corps Academy
 
+> 🧭 [← 2.4 Defence in Depth](https://github.com/starfall-defence-corps/mission-2-4-defence-in-depth) · **You are here: Master Simulation** · 🎓 Course complete — [what's next](https://github.com/starfall-defence-corps/sdc-academy) · [🏠 Academy Hub](https://github.com/starfall-defence-corps/sdc-academy)
+
 ## Master Simulation: Operation Iron Curtain
 
 > *"General Snowflake. 6 servers, every one different. Hand-built. Undocumented. Your mission: uniform, tested, automated compliance."*

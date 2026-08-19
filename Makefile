@@ -1,4 +1,4 @@
-.PHONY: help setup test incident reset destroy ssh-web-1 ssh-web-2 ssh-db-1 ssh-db-2 ssh-app ssh-comms
+.PHONY: doctor help setup test incident reset destroy ssh-web-1 ssh-web-2 ssh-db-1 ssh-db-2 ssh-app ssh-comms
 
 help: ## Show available commands
 	@echo ""
@@ -8,6 +8,9 @@ help: ## Show available commands
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-12s\033[0m %s\n", $$1, $$2}'
 	@echo ""
+
+doctor: ## Check your machine is mission-ready (Docker, ports, tools)
+	@bash $(ROOT_DIR)/scripts/doctor.sh
 
 setup: ## Launch Iron Curtain fleet (6 nodes)
 	@bash scripts/setup-lab.sh
