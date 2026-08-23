@@ -1,4 +1,5 @@
 .PHONY: doctor submit help setup test incident reset destroy ssh-web-1 ssh-web-2 ssh-db-1 ssh-db-2 ssh-app ssh-comms
+ROOT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 help: ## Show available commands
 	@echo ""
