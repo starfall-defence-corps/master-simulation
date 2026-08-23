@@ -220,6 +220,12 @@ After running `make incident`, ARIA will report anomalous activity. One or more 
 
 > **STOP YOUR TIMER** after `make test` confirms all four missions pass.
 
+Your elapsed time is also measured automatically from `make setup`; ARIA reports the tier when all four missions pass.
+
+### Live service scoring
+
+From `make setup` onward, ARIA's scoring engine polls every node's availability in the background — as a real cyber-exercise scoreboard does. `make test` reports an **Exercise score** (out of 100) that blends **service availability across the whole run** with objective completion. Remediation that black-outs a node costs availability, and score. Keep the fleet reachable while you rebuild it.
+
 ---
 
 ## 6. COMMAND AND SIGNAL
