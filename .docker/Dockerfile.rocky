@@ -54,7 +54,7 @@ RUN rm -f /etc/motd && rm -f /etc/issue.net
 # Cron — no restrictions
 RUN rm -f /etc/cron.allow && rm -f /etc/at.allow
 
-# General Snowflake's planted credentials
+# Dread Admiral Snowflake's planted credentials
 RUN echo 'db_user=fleet_admin' > /opt/fleet-db-creds.txt \
     && echo 'db_pass=starfall_2187' >> /opt/fleet-db-creds.txt
 
