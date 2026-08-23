@@ -64,7 +64,7 @@ RUN rm -f /etc/motd && rm -f /etc/issue.net
 RUN rm -f /etc/cron.allow \
     && rm -f /etc/at.allow
 
-# General Snowflake's planted credentials
+# Dread Admiral Snowflake's planted credentials
 RUN echo -e "# Fleet Database Credentials — DO NOT SHARE\nfleet_db_user: admin\nfleet_db_pass: V01dborn_Hunter_2187\nfleet_api_key: sk-sdc-1a2b3c4d5e6f7g8h9i0j" > /opt/fleet-db-creds.txt
 
 # Create cadet user

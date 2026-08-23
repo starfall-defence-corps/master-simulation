@@ -6,7 +6,7 @@
 
 ## Master Simulation: Operation Iron Curtain
 
-> *"General Snowflake. 6 servers, every one different. Hand-built. Undocumented. Your mission: uniform, tested, automated compliance."*
+> *"Dread Admiral Snowflake. 6 servers, every one different. Hand-built. Undocumented. Your mission: uniform, tested, automated compliance."*
 
 You are a Lieutenant at the Starfall Defence Corps Academy. You've completed all of Module 2. Now prove you can combine every skill — assessment, remediation, testing, automation, and incident response — in a single 3.5-hour timed simulation.
 
@@ -57,7 +57,7 @@ Stuck? [Hints](docs/HINTS.md) | Track progress: [Checklist](CHECKLIST.md)
 | 3 — Automation | CI pipeline, ansible-lint, Makefile, drift detection | 60 min |
 | 4 — Incident | Detect, identify, remediate, document | 35 min |
 
-**Total**: 3.5 hours | **Rank Earned**: Lt. Commander | **Badge**: Iron Curtain — Master Operator
+**Total**: 3.5 hours | **Rank Earned**: Lieutenant Commander | **Badge**: Iron Curtain — Master Operator
 
 ## Available Commands
 

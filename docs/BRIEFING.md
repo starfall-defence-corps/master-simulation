@@ -13,9 +13,9 @@ AUTHORITY: SDC Cyber Command, 2187
 
 ### 1a. Enemy Forces
 
-**General Snowflake** built this fleet by hand. Six servers. Every one different. Nothing documented. Nothing tested. Nothing automated. His defence: "I know where everything is." His incident response plan: "Call me."
+**Dread Admiral Snowflake** built this fleet by hand. Six servers. Every one different. Nothing documented. Nothing tested. Nothing automated. His defence: "I know where everything is." His incident response plan: "Call me."
 
-General Snowflake has been relieved of command. You inherit his infrastructure.
+Dread Admiral Snowflake has been relieved of command. You inherit his infrastructure.
 
 The Voidborn have been probing the fleet for weeks. With no compliance baseline, no automated testing, and no drift detection, you have no way to know what's already been changed — or what's about to be.
 
@@ -40,7 +40,7 @@ This simulation requires all of it.
 
 ## 2. MISSION
 
-Replace General Snowflake's hand-built infrastructure with uniform, tested, automated CIS compliance across all six nodes.
+Replace Dread Admiral Snowflake's hand-built infrastructure with uniform, tested, automated CIS compliance across all six nodes.
 
 | Mission | Description | Time |
 |---------|-------------|------|
@@ -57,7 +57,7 @@ Replace General Snowflake's hand-built infrastructure with uniform, tested, auto
 
 ### 3a. Commander's Intent
 
-General Snowflake's reign of hand-built infrastructure ends today. When this simulation is complete, the fleet will have: a CIS-compliant hardening role with tagged controls, Molecule tests proving compliance, a CI pipeline enforcing quality, drift detection catching unauthorised changes, and documentation proving all of it.
+Dread Admiral Snowflake's reign of hand-built infrastructure ends today. When this simulation is complete, the fleet will have: a CIS-compliant hardening role with tagged controls, Molecule tests proving compliance, a CI pipeline enforcing quality, drift detection catching unauthorised changes, and documentation proving all of it.
 
 ### 3b. Lab Assets
 
@@ -76,7 +76,7 @@ General Snowflake's reign of hand-built infrastructure ends today. When this sim
 
 ### 3c. Known Threat Profile
 
-All containers ship with General Snowflake's misconfigurations:
+All containers ship with Dread Admiral Snowflake's misconfigurations:
 
 **SSH (CIS 5.2.x)**:
 - Root login enabled, password authentication enabled
@@ -168,7 +168,7 @@ ansible debian -m shell -a "lynis audit system --quick --no-colors 2>/dev/null |
 
 ### Mission 3: Automation (60 min)
 
-**Objective**: Build the CI/CD pipeline that prevents General Snowflake from ever happening again.
+**Objective**: Build the CI/CD pipeline that prevents Dread Admiral Snowflake from ever happening again.
 
 **Deliverables** (all paths relative to `workspace/`):
 1. **`.github/workflows/ci.yml`** — CI workflow with:
@@ -224,9 +224,9 @@ After running `make incident`, ARIA will report anomalous activity. One or more 
 
 ## 6. COMMAND AND SIGNAL
 
-**Commander's Final Order**: General Snowflake built six servers by hand and called it infrastructure. You will replace it with code. Measurable. Testable. Automated. When ARIA confirms all four missions, General Snowflake is relieved of duty and you earn the Iron Curtain badge.
+**Commander's Final Order**: Dread Admiral Snowflake built six servers by hand and called it infrastructure. You will replace it with code. Measurable. Testable. Automated. When ARIA confirms all four missions, Dread Admiral Snowflake is relieved of duty and you earn the Iron Curtain badge.
 
-**Rank Earned**: Lt. Commander
+**Rank Earned**: Lieutenant Commander
 **Badge**: Iron Curtain — Master Operator
 
 ---
