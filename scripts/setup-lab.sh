@@ -94,3 +94,15 @@ echo ""
 
 # #50 — stamp mission start for the ARIA performance tier (make test reads it)
 date +%s > "$ROOT_DIR/.aria_start" 2>/dev/null || true
+
+# #56 — start the exercise scoring poller (kill any prior instance, fresh log).
+# It TCP-probes each node's published SSH port so ARIA can score service
+# availability across the whole run. Killed by make reset/destroy.
+if [ -f "$ROOT_DIR/.aria_score.pid" ]; then
+    kill "$(cat "$ROOT_DIR/.aria_score.pid")" 2>/dev/null || true
+fi
+: > "$ROOT_DIR/.aria_score.jsonl"
+ARIA_SCORE_LOG="$ROOT_DIR/.aria_score.jsonl" \
+ARIA_SCORE_TARGETS="sdc-iron-web-1=2281 sdc-iron-web-2=2282 sdc-iron-db-1=2283 sdc-iron-db-2=2284 sdc-iron-app=2285 sdc-iron-comms=2286" \
+    nohup bash "$SCRIPT_DIR/score-poller.sh" >/dev/null 2>&1 &
+echo $! > "$ROOT_DIR/.aria_score.pid"
