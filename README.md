@@ -1,6 +1,6 @@
 # Starfall Defence Corps Academy
 
-> 🧭 [← 2.6 Counterattack](https://github.com/starfall-defence-corps/mission-2-6-counterattack) · **You are here: Master Simulation** · 🎓 Course complete — [what's next](https://github.com/starfall-defence-corps/sdc-academy) · [🏠 Academy Hub](https://github.com/starfall-defence-corps/sdc-academy)
+> 🧭 [← 2.6 Counterattack](https://github.com/starfall-defence-corps/mission-2-6-counterattack) · **You are here: Master Simulation** · 🎓 Module 2 complete — next: [MOS 4 · Eyes Everywhere →](https://github.com/starfall-defence-corps/mission-3-4-eyes-everywhere) · [🏠 Academy Hub](https://github.com/starfall-defence-corps/sdc-academy)
 
 > ☁️ **No Docker on your machine?** Create your own copy first (Use this template), then on **your** repo: **Code → Codespaces → Create codespace** — everything is preinstalled. First boot takes ~5 min (one-time); after that it starts fast.
 
