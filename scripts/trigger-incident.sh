@@ -66,6 +66,13 @@ CRON
 # Leave a marker for ARIA to verify identification
 echo "compromised_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)" > /opt/.compromised
 echo "agent=voidborn-recon-7" >> /opt/.compromised
+
+# Range-control flag ARIA uses to know the incident has fired. This is NOT
+# an IOC and is deliberately outside /opt so that remediating the visible
+# artifacts (incl. removing /opt/.compromised) can't silently disable the
+# Mission-4 verification checks. Only 'make reset'/'make destroy' clears it.
+mkdir -p /var/lib/sdc
+echo "incident_active=1" > /var/lib/sdc/.incident-active
 COMPROMISE
 
 echo -e "  ${DIM}Incident triggered. The clock is ticking.${RESET}"

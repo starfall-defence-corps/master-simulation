@@ -308,10 +308,12 @@ class TestRemediation:
             pytest.skip("Role does not exist yet")
         result = _run_ansible(
             "ansible", "all", "-m", "shell",
-            "-a", "grep -E '^PermitRootLogin\\s+no' /etc/ssh/sshd_config",
+            "-a", "/usr/sbin/sshd -T 2>/dev/null | grep -iqE '^permitrootlogin no'",
         )
         assert result.returncode == 0, (
-            "ARIA: SSH root login not disabled on all nodes."
+            "ARIA: SSH root login not disabled on all nodes. Checked via the "
+            "effective config ('sshd -T'), so hardening in "
+            "/etc/ssh/sshd_config.d/ drop-ins is accepted as well as the main file."
         )
 
     def test_shadow_permissions(self):
@@ -541,25 +543,26 @@ class TestIncident:
         # Check if incident has been triggered (marker file exists)
         result = _run_ansible(
             "ansible", "sdc-iron-web-2", "-m", "shell",
-            "-a", "test -f /opt/.compromised && echo INCIDENT || echo CLEAN",
+            "-a", "test -f /var/lib/sdc/.incident-active && echo INCIDENT || echo CLEAN",
         )
         if "INCIDENT" not in result.stdout:
             pytest.skip("Incident not yet triggered — run 'make incident' first")
         # Now check SSH is hardened
         result = _run_ansible(
             "ansible", "sdc-iron-web-2", "-m", "shell",
-            "-a", "grep -E '^PermitRootLogin\\s+no' /etc/ssh/sshd_config",
+            "-a", "/usr/sbin/sshd -T 2>/dev/null | grep -iqE '^permitrootlogin no'",
         )
         assert result.returncode == 0, (
             "ARIA: Compromised node sdc-iron-web-2 still has SSH misconfigured. "
-            "Re-apply your hardening role."
+            "Re-apply your hardening role. (Checked via 'sshd -T' effective "
+            "config — a sshd_config.d/ drop-in works too.)"
         )
 
     def test_compromised_node_rogue_user_removed(self):
         """Rogue user must be removed from compromised node"""
         result = _run_ansible(
             "ansible", "sdc-iron-web-2", "-m", "shell",
-            "-a", "test -f /opt/.compromised && echo INCIDENT || echo CLEAN",
+            "-a", "test -f /var/lib/sdc/.incident-active && echo INCIDENT || echo CLEAN",
         )
         if "INCIDENT" not in result.stdout:
             pytest.skip("Incident not yet triggered")
@@ -576,7 +579,7 @@ class TestIncident:
         """Suspicious cron job must be removed"""
         result = _run_ansible(
             "ansible", "sdc-iron-web-2", "-m", "shell",
-            "-a", "test -f /opt/.compromised && echo INCIDENT || echo CLEAN",
+            "-a", "test -f /var/lib/sdc/.incident-active && echo INCIDENT || echo CLEAN",
         )
         if "INCIDENT" not in result.stdout:
             pytest.skip("Incident not yet triggered")
