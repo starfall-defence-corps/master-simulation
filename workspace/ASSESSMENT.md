@@ -13,14 +13,22 @@
 
 ## Lynis Baseline Scores
 
-<!-- Run Lynis on each node BEFORE applying your role -->
+<!-- Run Lynis on each node BEFORE applying your role.
+     Lynis is pre-installed on the Ubuntu nodes only (web-1, web-2, app,
+     comms). The Rocky Linux db nodes (db-1, db-2) have no Lynis by default,
+     so their rows are marked N/A — install it yourself and note that if you
+     want scores. ARIA only requires baseline scores for the Ubuntu nodes.
+     See HINTS.md ("Lynis not found"). -->
+
+Ubuntu nodes: sdc-iron-web-1, sdc-iron-web-2, sdc-iron-app, sdc-iron-comms.
+Rocky nodes (Lynis N/A): sdc-iron-db-1, sdc-iron-db-2.
 
 | Node | Baseline Score | Post-Hardening Score | Improvement |
 |------|---------------|---------------------|-------------|
 | sdc-iron-web-1 | | | |
 | sdc-iron-web-2 | | | |
-| sdc-iron-db-1 | | | |
-| sdc-iron-db-2 | | | |
+| sdc-iron-db-1 | N/A | N/A | N/A |
+| sdc-iron-db-2 | N/A | N/A | N/A |
 | sdc-iron-app | | | |
 | sdc-iron-comms | | | |
 
