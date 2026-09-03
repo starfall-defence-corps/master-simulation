@@ -79,6 +79,8 @@ make ssh-app    SSH into sdc-iron-app (Ubuntu)
 make ssh-comms  SSH into sdc-iron-comms (Ubuntu)
 ```
 
+> **Note:** `make submit` uses the [GitHub CLI](https://cli.github.com/) — install `gh` and run `gh auth login` once before your first submission.
+
 ## ARIA Review (Pull Request Workflow)
 
 **Locally** — run `make test` for instant verification.
