@@ -12,7 +12,7 @@ You are a Lieutenant at the Starfall Defence Corps Academy. You've completed all
 
 ## Prerequisites
 
-- Completed Module 2 (Missions 2.1–2.4)
+- Completed Module 2 (Missions 2.1–2.6)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (with Docker Compose v2)
 - [GNU Make](https://www.gnu.org/software/make/)
 - Python 3.10+ (with `python3-venv`)
