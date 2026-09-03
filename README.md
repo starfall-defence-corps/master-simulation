@@ -25,6 +25,7 @@ You are a Lieutenant at the Starfall Defence Corps Academy. You've completed all
 ```bash
 git clone https://github.com/YOUR-USERNAME/master-simulation.git
 cd master-simulation
+make doctor
 make setup
 source venv/bin/activate
 ```
@@ -63,9 +64,11 @@ Stuck? [Hints](docs/HINTS.md) | Track progress: [Checklist](CHECKLIST.md)
 
 ```
 make help       Show available commands
+make doctor     Check your machine is mission-ready (Docker, ports, tools)
 make setup      Launch 6-node Iron Curtain fleet
 make test       Run ARIA assessment verification
 make incident   Trigger the surprise incident (Mission 4)
+make submit     Submit your work for ARIA review (branch, commit, push, PR)
 make reset      Destroy and rebuild all nodes
 make destroy    Complete teardown
 make ssh-web-1  SSH into sdc-iron-web-1 (Ubuntu)
@@ -75,6 +78,8 @@ make ssh-db-2   SSH into sdc-iron-db-2 (Rocky Linux)
 make ssh-app    SSH into sdc-iron-app (Ubuntu)
 make ssh-comms  SSH into sdc-iron-comms (Ubuntu)
 ```
+
+> **Note:** `make submit` uses the [GitHub CLI](https://cli.github.com/) — install `gh` and run `gh auth login` once before your first submission.
 
 ## ARIA Review (Pull Request Workflow)
 
