@@ -26,6 +26,8 @@ You have completed all of Module 2. You can:
 - **Test** infrastructure with Molecule and Testinfra (Mission 2.1)
 - **Deploy** with rolling updates and error handling (Mission 2.3)
 - **Automate** with CI/CD pipelines and drift detection (Mission 2.4)
+- **Respond** to a live incident under fire (Mission 2.5)
+- **Counter** an entrenched intruder and remove persistence (Mission 2.6)
 - Plus every skill from Module 1: inventory, roles, Vault, templates, handlers, multi-OS support
 
 This simulation requires all of it.
