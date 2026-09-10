@@ -4,7 +4,7 @@
 # TCP-probes each scored node's published SSH port every ARIA_SCORE_INTERVAL
 # seconds and appends a JSONL availability sample to ARIA_SCORE_LOG:
 #
-#     {"t": 1690000000, "up": {"sdc-fwd-web": 1, "sdc-fwd-db": 0, ...}}
+#     {"t": 1690000000, "up": {"sdc-iron-web-1": 1, "sdc-iron-db-1": 0, ...}}
 #
 # Started in the background by `make setup`; runs until `make reset`/`destroy`
 # kills it (PID in .aria_score.pid). At `make test`, ARIA reads the log and
