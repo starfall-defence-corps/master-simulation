@@ -22,12 +22,12 @@ The Voidborn have been probing the fleet for weeks. With no compliance baseline,
 ### 1b. Friendly Forces
 
 You have completed all of Module 2. You can:
-- **Assess** systems against CIS benchmarks using Lynis (Mission 2.2)
-- **Test** infrastructure with Molecule and Testinfra (Mission 2.1)
-- **Deploy** with rolling updates and error handling (Mission 2.3)
-- **Automate** with CI/CD pipelines and drift detection (Mission 2.4)
-- **Respond** to a live incident under fire (Mission 2.5)
-- **Counter** an entrenched intruder and remove persistence (Mission 2.6)
+- **Assess** systems against CIS benchmarks using Lynis ([Mission 2.2](https://github.com/starfall-defence-corps/mission-2-2-compliance-as-code))
+- **Test** infrastructure with Molecule and Testinfra ([Mission 2.1](https://github.com/starfall-defence-corps/mission-2-1-weapon-handling-test))
+- **Deploy** with rolling updates and error handling ([Mission 2.3](https://github.com/starfall-defence-corps/mission-2-3-fleet-sync))
+- **Automate** with CI/CD pipelines and drift detection ([Mission 2.4](https://github.com/starfall-defence-corps/mission-2-4-defence-in-depth))
+- **Respond** to a live incident under fire ([Mission 2.5](https://github.com/starfall-defence-corps/mission-2-5-noise-storm))
+- **Counter** an entrenched intruder and remove persistence ([Mission 2.6](https://github.com/starfall-defence-corps/mission-2-6-counterattack))
 - Plus every skill from Module 1: inventory, roles, Vault, templates, handlers, multi-OS support
 
 This simulation requires all of it.
