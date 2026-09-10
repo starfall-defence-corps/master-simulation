@@ -71,3 +71,5 @@
 | 3–3.5 hrs | Qualified |
 | 3.5–4 hrs | Passed |
 | 4+ hrs | Return to AIT — retry |
+
+**Next stop**: MOS electives — [MOS 4 · Eyes Everywhere](https://github.com/starfall-defence-corps/mission-3-4-eyes-everywhere) · [MOS 5 · Battle Rattle](https://github.com/starfall-defence-corps/mission-3-5-battle-rattle)
