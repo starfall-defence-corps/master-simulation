@@ -1,5 +1,7 @@
 # Operation: Iron Curtain — Hints
 
+> 📚 Deeper reference: [FM-3 — Molecule & Testing Reference](https://github.com/starfall-defence-corps/sdc-academy/blob/main/field-manuals/FM-3-molecule-testing-reference.md) · [FM-4 — CIS & Compliance Reference](https://github.com/starfall-defence-corps/sdc-academy/blob/main/field-manuals/FM-4-cis-compliance-reference.md)
+
 > Back to: [Briefing](BRIEFING.md) | [Checklist](../CHECKLIST.md)
 
 ## Troubleshooting
