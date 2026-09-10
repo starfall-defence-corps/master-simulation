@@ -23,7 +23,7 @@ jobs:
         id: aria
         uses: starfall-defence-corps/aria@main
         with:
-          mission: "master-simulation"
+          mission: "master"
           mission-root: ${{ github.workspace }}
           output-file: aria-output.txt
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
