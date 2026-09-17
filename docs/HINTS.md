@@ -37,7 +37,6 @@ ansible debian -m shell -a "lynis audit system --quick --no-colors 2>/dev/null |
 
 **Connectivity test**:
 ```bash
-cd workspace
 ansible all -m ping
 ```
 
