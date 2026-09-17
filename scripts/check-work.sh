@@ -52,7 +52,7 @@ if [ $EXIT_CODE -eq 0 ]; then
     echo -e "  ARIA: All objectives verified."
     echo -e "  Operation Iron Curtain status: COMPLETE"
     echo -e ""
-    echo -e "  Lieutenant, you have replaced Dread Admiral"
+    echo -e "  Lieutenant Commander, you have replaced Dread Admiral"
     echo -e "  Snowflake's hand-built infrastructure with"
     echo -e "  uniform, tested, automated compliance."
     echo -e ""
